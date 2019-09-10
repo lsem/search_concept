@@ -1,0 +1,3 @@
+# Build
+
+Staying at repository root, a variant of: `mkdir bld && cd bld && cmake .. && make -j4` should be sufficient.
