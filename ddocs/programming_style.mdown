@@ -1,0 +1,6 @@
+# Error handling
+
+https://www.youtube.com/watch?v=Wq8fNK98WGw
+https://llvm.org/docs/ProgrammersManual.html#recoverable-errors
+https://github.com/weliveindetail/llvm-expected
+
