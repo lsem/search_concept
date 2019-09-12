@@ -1,0 +1,20 @@
+
+Code is strictly broken down into units. Each unit defines a set of errors from this unit (https://akrzemi1.wordpress.com/2017/07/12/your-own-error-code/).
+
+E.g. if we have unit dal, it should have directory dal with following possible content:
+
+dal/
+  Errors.h
+  Errors.cpp
+  ITileLoader.h
+  ITileLoader.cpp
+  InMemTileLoader.h
+  InMemTileLoader.cpp
+  FileTileLoader.h
+  FileTileLoader.cpp
+  ProtobufTileLoader.h
+  ProtobufTileLoader.cpp
+  tests/
+  	ProtobufTilerLoaderTest.cpp
+  	InMemTileLoaderTeset.cpp
+

@@ -13,7 +13,7 @@ project(SearchConcept)
 include("cmake/BuildOptions.cmake")
 
 add_subdirectory(external/llvm-expected)
-add_subdirectory("src/srchlib")
+add_subdirectory("src/sskitlib")
 add_subdirectory("src/common")
 add_subdirectory("src/apps/client")
 add_subdirectory("src/apps/compiler")
