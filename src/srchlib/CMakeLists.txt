@@ -21,6 +21,7 @@ add_library(srchlib ${SRCHLIB_H_FILES} ${SRCHLIB_CPP_FILES})
 set_target_properties(srchlib PROPERTIES CXX_STANDARD 20)
 target_include_directories(srchlib PUBLIC include)
 target_link_libraries(srchlib PUBLIC fmt::fmt)
+target_link_libraries(srchlib PUBLIC sskit_common)
 
 # ------------------------------------------------------------------
 #  Target: schrlib_tests
