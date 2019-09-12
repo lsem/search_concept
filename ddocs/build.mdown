@@ -1,0 +1,40 @@
+"Everything should be made as simple as possible, but not simpler" (Albert Einstein)
+
+# Compiler versions, etc..
+It seems like the best would be not to use cmake compiler discovery and tooling but instead
+just download appropriate tooling from repository. This would ensure that we have all tools we need.
+
+
+# Coverege
+https://clang.llvm.org/docs/SourceBasedCodeCoverage.html
+
+# CMake
+
+Cmake techniques are known to be always outdated, so the only strategy to use
+is to be modern.
+
+Here are some tutorials that declare what is modern:
+https://gist.github.com/mbinna/c61dbb39bca0e4fb7d1f73b0d66a4fd1
+https://cliutils.gitlab.io/modern-cmake/modern-cmake.pdf
+https://pabloariasal.github.io/2018/02/19/its-time-to-do-cmake-right/
+https://foonathan.net/blog/2018/10/17/cmake-warnings.html
+http://mariobadr.com/creating-a-header-only-library-with-cmake.html
+https://www.slideshare.net/DanielPfeifer1/effective-cmake
+
+Sources are automatically picked up similarly as in high-productive languages like Go.
+This works due to file(GLOB_RECURSE CONFIGURE_DEPENDS). CONFIGURE_DEPENDS allows to detect new files by backend build system
+and automatically rerun cmake.
+
+just regular `cmake .` should produce reasonable default.
+
+# TODO
+- Crete repository with coverge reports for different runs. Every time when we run report,
+report should be saved in some repository. Key is revision of executable produced this report which
+is hash of commit + executable. Having this we can produce nice diff.
+See https://github.com/lsem/llvm-expected/blob/master/CMakeLists.txt#L18 for how to identify compilers.
+
+- Handle properly profiling flags (https://foonathan.net/blog/2018/10/17/cmake-warnings.html)
+
+- Adopt error handling mechanism from LLVM: https://github.com/weliveindetail/llvm-expected
+
+- Encorporate precompiled headers https://github.com/nanoant/CMakePCHCompiler
