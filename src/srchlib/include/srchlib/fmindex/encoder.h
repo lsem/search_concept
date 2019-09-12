@@ -1,5 +1,3 @@
 #pragma once
 
-namespace srchlib {
-namespace fmindex {}  // namespace fmindex
-}  // namespace srchlib
+namespace srchlib::fmindex {}  // namespace srchlib::fmindex

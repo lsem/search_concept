@@ -32,5 +32,6 @@ file(GLOB_RECURSE  LIB_TEST_HEADER_FILES CONFIGURE_DEPENDS "*.h")
 list(FILTER LIB_TEST_HEADER_FILES INCLUDE REGEX "(.*\\/src\\/srchlib)(.*)(\\/tests\\/)(.*\\.h)")
 
 add_library(srchlib_tests ${LIB_TEST_HEADER_FILES} ${LIB_TEST_CPP_FILES})
+set_target_properties(srchlib_tests PROPERTIES CXX_STANDARD 20)
 target_link_libraries(srchlib_tests PUBLIC srchlib)
 target_link_libraries(srchlib_tests PUBLIC GMock::gmock)  # GTest::gtest will be linked automatically

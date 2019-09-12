@@ -1,5 +1,3 @@
 #pragma once
 
-enum class DALError {
-
-};
+namespace srchlib::dal {}  // namespace srchlib::dal

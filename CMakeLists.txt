@@ -10,8 +10,6 @@ HunterGate(
 
 project(SearchConcept)
 
-
-# BUILD OPTIONS
 include("cmake/BuildOptions.cmake")
 
 add_subdirectory("src/srchlib")
