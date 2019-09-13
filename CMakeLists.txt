@@ -12,6 +12,8 @@ project(SearchConcept)
 
 include("cmake/BuildOptions.cmake")
 
+set(SSKIT_CXX_STANDARD "17")
+
 add_subdirectory(external/llvm-expected)
 add_subdirectory("src/sskitlib")
 add_subdirectory("src/common")
