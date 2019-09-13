@@ -1,5 +1,13 @@
 BasedOnStyle: Chromium
 ColumnLimit: 100
-IndentWidth: 4
-UseTab: Never
 AllowShortFunctionsOnASingleLine: InlineOnly
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: '(pch\.h)(>|")'
+    Priority: -1
+  - Regex: '^(<|")(sskit.*)'
+    Priority: 2
+  - Regex: '^(<|")(gtest|gmock|gflags|fmt)\/'
+    Priority: 3
+  - Regex: '.*'
+    Priority: 4

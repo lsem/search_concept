@@ -9,10 +9,10 @@ DEFINE_string(example_list, "one,two,three", "An example of list (in fact just a
 using namespace std;
 
 int main(int argc, char* argv[]) {
-    gflags::ParseCommandLineFlags(&argc, &argv, true);
+  gflags::ParseCommandLineFlags(&argc, &argv, true);
 
-    cout << "Args are:\n";
-    for (int i = 0; i < argc; ++i) {
-        cout << argv[i] << endl;
-    }
+  cout << "Args are:\n";
+  for (int i = 0; i < argc; ++i) {
+    cout << argv[i] << endl;
+  }
 }

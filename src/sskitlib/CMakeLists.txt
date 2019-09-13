@@ -11,13 +11,13 @@ find_package(GMock CONFIG REQUIRED)
 # ------------------------------------------------------------------
 #  Target: sskit_lib(SSKit::lib)
 # ------------------------------------------------------------------
-file(GLOB_RECURSE SRCHLIB_H_FILES  CONFIGURE_DEPENDS "*.h")
-file(GLOB_RECURSE SRCHLIB_CPP_FILES  CONFIGURE_DEPENDS "*.cpp")
+file(GLOB_RECURSE SSKITLIB_H_FILES  CONFIGURE_DEPENDS "*.h")
+file(GLOB_RECURSE SSKITLIB_CPP_FILES  CONFIGURE_DEPENDS "*.cpp")
 # Remove tests files, they are handled in schrlib_tests target.
-list(FILTER SRCHLIB_CPP_FILES EXCLUDE REGEX "_tests\\.cpp")
-list(FILTER SRCHLIB_H_FILES EXCLUDE REGEX "_tests\\.h")
+list(FILTER SSKITLIB_CPP_FILES EXCLUDE REGEX "_tests\\.cpp")
+list(FILTER SSKITLIB_H_FILES EXCLUDE REGEX "_tests\\.h")
 
-add_library(sskit_lib ${SRCHLIB_H_FILES} ${SRCHLIB_CPP_FILES})
+add_library(sskit_lib ${SSKITLIB_H_FILES} ${SSKITLIB_CPP_FILES})
 add_library(SSKit::lib ALIAS sskit_lib)
 set_target_properties(sskit_lib PROPERTIES CXX_STANDARD ${SSKIT_CXX_STANDARD})
 target_include_directories(sskit_lib PUBLIC include)

@@ -1,3 +1,3 @@
 #pragma once
 
-namespace srchlib::common {}  // namespace sskitlib::common
+namespace srchlib::common {}  // namespace srchlib::common

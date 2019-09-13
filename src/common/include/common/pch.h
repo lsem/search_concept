@@ -1,22 +1,21 @@
 #pragma once
 
+#include <algorithm>
+#include <cstdint>
 #include <llvm-expected/llvm-expected.h>
-
-#include <string>
-#include <vector>
 #include <map>
 #include <set>
-#include <unordered_set>
+#include <string>
 #include <unordered_map>
-#include <cstdint>
-#include <algorithm>
+#include <unordered_set>
+#include <vector>
 
-using llvm::Expected;
 using llvm::Error;
+using llvm::Expected;
 
-using std::string;
-using std::vector;
 using std::map;
 using std::set;
-using std::unordered_set;
+using std::string;
 using std::unordered_map;
+using std::unordered_set;
+using std::vector;
