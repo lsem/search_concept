@@ -9,7 +9,7 @@ find_package(gflags CONFIG REQUIRED)
 #  Target: client
 # ------------------------------------------------------------------
 add_executable(client "${CMAKE_SOURCE_DIR}/src/apps/client/client_main.cpp")
-set_target_properties(client PROPERTIES CXX_STANDARD 20)
+set_target_properties(client PROPERTIES CXX_STANDARD 17)
 target_link_libraries(client PUBLIC SSKit::lib)
 target_link_libraries(client PUBLIC gflags)
 
