@@ -1,3 +1,3 @@
 #pragma once
 
-namespace srchlib::dal {}  // namespace srchlib::dal
+namespace sskitlib::dal {}  // namespace sskitlib::dal
