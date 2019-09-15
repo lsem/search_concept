@@ -48,9 +48,9 @@
 #include <stdio.h>
 #include <string.h>
 
-#if defined(_WIN32) && !defined(__MINGW32__)
+#if defined(_WIN32) && !defined(__MINGW32__) || defined(_DONT_USE_CONFIG)
 /* MSVC: avoiding to include at all config.h */
-#define VERSION	1.1.0
+#define VERSION	"1.1.0"
 #else
 #include "config.h"
 #endif

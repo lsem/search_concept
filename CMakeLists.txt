@@ -15,6 +15,7 @@ include("cmake/BuildOptions.cmake")
 set(SSKIT_CXX_STANDARD "17")
 
 add_subdirectory(external/llvm-expected)
+add_subdirectory(external/readosm-1.1.0)
 add_subdirectory("src/sskitlib")
 add_subdirectory("src/common")
 add_subdirectory("src/apps/client")
