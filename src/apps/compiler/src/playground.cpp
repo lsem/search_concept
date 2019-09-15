@@ -16,10 +16,22 @@ using namespace std;
 namespace apps::compiler::playground {
 
 class Compiler : public IOSMStreamReadSink {
-  virtual void node_parsed() override { std::cout << "Compiler::node_parsed()" << endl; }
-  virtual void way_parsed() override { std::cout << "Compiler::way_parsed()" << endl; }
-  virtual void relation_parsed() override { std::cout << "Compiler::relation_parsed()" << endl; }
+  virtual void node_parsed(OSMNode node) override {
+    std::cout << fmt::format("Compiler::node_parsed: {}({},{})", node.ID, node.Latitude,
+                             node.Longitude)
+              << std::endl;
+  }
+  virtual void way_parsed(OSMWay way) override {
+    std::cout << fmt::format("Compiler::way_parsed: {}(has {} tags}", way.ID, way.Tags.size())
+              << std::endl;
+  }
+  virtual void relation_parsed(OSMRelation relation) override {
+    std::cout << fmt::format("Compiler::relation_parsed: {} relates to ({} members)", relation.ID,
+                             relation.Members.size())
+              << std::endl;
+  }
 };
+
 void run() {
   cout << "FLAGS_osm_file: " << FLAGS_osm_file << endl;
   Compiler compiler;

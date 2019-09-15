@@ -23,3 +23,5 @@ using std::unique_ptr;
 using std::unordered_map;
 using std::unordered_set;
 using std::vector;
+
+[[noreturn]] void sskit_unreachable(string what = "");
