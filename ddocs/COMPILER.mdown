@@ -1,0 +1,31 @@
+# ALGORITHM
+
+First, cut map to tiles of some level, suitable for building indexes. It should be not smaller than avarage street dimensions.
+Tile should also be optimized for efficient processing. If we want to process it on small compuler (like 5$ Digital Ocean node with 512MB ram) it would be nice to be possible to keep all neighbour tiles for dense regions and not consume more than 250MB.
+
+Then, starting at some tile T scan linearly the tile. Build index of it so that we can query any OSM object by NodeID or
+by some polygon/tile boundaries. At this point we have done next:
+	- Read tile into memory
+	- Have index by NODE ID
+	- Have index by geometry.
+Ideally, we should strive to keep this processing IO bound, e.g. consume no more than 10% for computation even on modest hardware. It seems reasonable to build indexes while IO is being done so producer consumer computational pattern looks good.
+Ideally we can tune data, code and algorithms to do IO and CPU simulteniously without waiting one for another.
+
+Lets think about queries we would like to have:
+    - Get OSM object (node, way, relation) by ID
+    - Get objects close to point (preferebly with object type). This needed for quering house number close to road to assotiate
+    house numbers with streets.
+
+To recap, what we want to achieve:
+    - Having OSM records database split to tiles (of arbitary size), open and read them fully into memory (might be possible to encode for smaller tile memory footprint)
+    - Build index by ID for the tile (old google flat hash table libray can be used for this purposes)
+    - Build index by ways geometry for the tile
+    - Be able to repeat the process above for all neighbour tiles. This needed because there is an assumption that
+    there could be some streets that cover more than one tile and there are no steet name is attached only to way in one of the tiles so we would need to open neighbour tile.
+
+# IDEAS
+OSM data cut into S2 tiles can lie in blobs of parent s2 tiles. Than, it would be possible to keep source data on external storage and process world by parts. E.g. we have node with 50 GB of SSD, than we can load Super Tile of roughly 10GB size.
+Than, we cannot load entire 10GB tile into memory, but we can seek inside of this Super Tile and load Tiles for compilation.
+
+
+
