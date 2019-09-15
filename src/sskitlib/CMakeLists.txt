@@ -22,7 +22,6 @@ add_library(SSKit::lib ALIAS sskit_lib)
 set_target_properties(sskit_lib PROPERTIES CXX_STANDARD ${SSKIT_CXX_STANDARD})
 target_include_directories(sskit_lib PUBLIC include)
 target_link_libraries(sskit_lib PUBLIC SSKit::common)
-target_link_libraries(sskit_lib PUBLIC fmt::fmt)
 
 # ------------------------------------------------------------------
 #  Target: sskit_lib_tests(SSKit::lib_tests)
